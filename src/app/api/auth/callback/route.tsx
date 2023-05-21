@@ -9,7 +9,7 @@ export async function GET (request:NextRequest){
 
     // Pegando o code do Github
     const code = searchParams.get('code')
-
+    const redirectto = request.cookies.get('redirectto')?.value
     // Mandando  o code do github para o backend
     const RegisterResponse = await api.post('/register',{
         code,
@@ -21,7 +21,7 @@ export async function GET (request:NextRequest){
     const exprinTOken = 60*60*24*30
 
     // redirencionando o usario para home 
-    const ResponseUrl = new URL('/',request.url)
+    const ResponseUrl = redirectto ??  new URL('/',request.url)
     
     return NextResponse.redirect(ResponseUrl,{
         headers:{
