@@ -47,8 +47,7 @@ export default function RootLayout({
           <div className="flex flex-col p-16 bg-cover">
                   {children}
           </div>
-    </main>
-      
+      </main>
       </body>
     </html>
   )

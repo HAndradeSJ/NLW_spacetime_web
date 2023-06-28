@@ -1,3 +1,4 @@
+import { FormNewmemory } from "@/components/FormNewmemory";
 import { Mediapicker } from "@/components/Mediapicker";
 import { Camera, ChevronLeft } from "lucide-react";
 import Link from "next/link";
@@ -9,6 +10,7 @@ export default function NewMemory(){
                         <ChevronLeft className="h-4 w-4"/>
                         Voltar á timeline
                     </Link>
+                    <FormNewmemory/>
                    
                 </div>
         )   
